@@ -1,0 +1,26 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+cosid:
+  namespace: dwz
+  segment:
+    enabled: true
+    mode: chain
+    chain:
+      safe-distance: 5
+      prefetch-worker:
+        core-pool-size: 2
+        prefetch-period: 1s
+    distributor:
+      type: redis
+    share:
+      offset: 0
+      step: 100
+    provider:
+      bizC:
+        offset: 10000
+        step: 100
+      bizD:
+        offset: 10000
+        step: 100
